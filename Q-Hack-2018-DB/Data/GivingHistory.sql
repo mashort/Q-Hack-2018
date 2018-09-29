@@ -1,0 +1,2 @@
+﻿IF NOT EXISTS (SELECT 1 FROM [GivingHistory] WHERE [GivenDateTime] = '2018-09-29 12:01')
+INSERT INTO [dbo].[GivingHistory] ([GivenDateTime], [GivenAmount]) VALUES (N'2018-09-29 12:01', CAST(7.5400 AS Money))

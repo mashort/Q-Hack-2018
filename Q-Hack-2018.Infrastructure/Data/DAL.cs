@@ -203,7 +203,7 @@ namespace Q_Hack_2018.Infrastructure.Data
                 connection.Open();
 
                 var cost = command.ExecuteScalar();
-                returnVal = (decimal)cost;
+                returnVal = Decimal.Parse(cost.ToString()); //(decimal)cost;
                 
             }
 
