@@ -14,7 +14,7 @@
 <p class="given-text">So far you've given<span class="given-text--number">@Html.DisplayFor(model => model.GivenDays)</span> days of heating</pclass="text">
 
 
-<p>You're currnetly rounding up from the @Html.DisplayFor(model => model.CategoriesChosen)</p>
+<p>You're currently rounding up from the @Html.Raw(Model.CategoriesChosen)</p>
 <br />
 <p>So far you've given @Html.DisplayFor(model => model.GivenDays) days of heating</p>
 
