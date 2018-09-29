@@ -1,34 +1,38 @@
+<<<<<<< HEAD
 ﻿@page
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
+<h2 class="pot__text">Pot total</h2>
+<h2 class="pot__text pot__text__numbers"><span class="pot__text__numbers--poundsign">£</span>@Html.DisplayFor(model => model.PotTotal, "Currency")</h2>
+<img src="../images" alt="Alternate Text" />
+<p class="estimates">
+    <a class="estimates__href" href="#">Give me my estimates so far</a></pclass="estimates">
 
-<h2><span>£</span>@Html.DisplayFor(model => model.PotTotal, "Currency")</h2>
-
-<table class="table table-hover">
-    <thead class="nwthead">
-        <tr>
-            <th scope="col">
-                &nbsp;
-            </th>
-            <th scope="col">
-                &nbsp;
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-
-        @foreach (var category in Model.Categories)
-        {
+    <hr />
+    <table class="table">
+        <thead class="nwthead">
             <tr>
-                <th scope="row" style="vertical-align: middle;">
-                    @Html.DisplayFor(modelItem => category.Name)
+                <th scope="col">
+                    Transaction categories
                 </th>
-                <td style="vertical-align: middle;">
-                    @Html.DisplayFor(modelItem => category.Value)
-                </td>
+                <th scope="col">
+                    Roundup
+                </th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var category in Model.Categories)
+            {
+                <tr class="table-row">
+                    <th scope="row" style="vertical-align: middle;">
+                        <button type="button" class="btn btn-section">@Html.DisplayFor(modelItem => category.Name) <span class="btn__roundup">@Html.DisplayFor(modelItem => category.Value)</span> </button>
+<p class="roundup">@Html.DisplayFor(modelItem => category.Value) rounded up so far this month</p>
+    </th>
+<td> <button type="button" class="btn btn-on">On</button><button type="button" class="btn btn-off">Off</button></td>
+    </tr>
+}
+            </tbody>
+            </table>
+
