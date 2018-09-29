@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Q_Hack_2018.Infrastructure.Data;
 using Q_Hack_2018.Core.Entities;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Q_Hack_2018.Infrastructure.Business_Logic
 {
@@ -11,7 +12,7 @@ namespace Q_Hack_2018.Infrastructure.Business_Logic
     /// </summary>
     public class TxnProcessor
     {
-        public async void ProcessTransactions()
+        public async Task ProcessTransactions()
         {
             Dictionary<int, Category> categoryDict = new Dictionary<int, Category>();
             

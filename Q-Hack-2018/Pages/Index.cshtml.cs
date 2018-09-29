@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Q_Hack_2018.Core.Entities;
 using Q_Hack_2018.Infrastructure.Data;
+using Q_Hack_2018.Infrastructure.Business_Logic;
 
 namespace Q_Hack_2018.Pages
 {
@@ -16,7 +17,7 @@ namespace Q_Hack_2018.Pages
         public async Task OnGetAsync()
         {
             // Transactions = await new ServiceRepository().GetTransactions();
-            //await new TxnProcessor().ProcessTransactions()
+            await new TxnProcessor().ProcessTransactions();
         }
     }
 }

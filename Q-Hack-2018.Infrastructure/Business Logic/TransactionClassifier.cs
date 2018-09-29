@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Q_Hack_2018.Core.Entities;
+using Q_Hack_2018.Infrastructure.Data;
 
 namespace Q_Hack_2018.Infrastructure.Business_Logic
 {
@@ -16,7 +17,7 @@ namespace Q_Hack_2018.Infrastructure.Business_Logic
             _categories = new Dictionary<int, Category>();
 
             // Load the CategorisationMatches from the DB.
-
+            _categories = new DAL().GetCategories();
 
         }
 

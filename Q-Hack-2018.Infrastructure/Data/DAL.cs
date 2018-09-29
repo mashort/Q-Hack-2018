@@ -1,5 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using System.Collections.Generic;
+using Q_Hack_2018.Core.Entities;
 
 namespace Q_Hack_2018.Infrastructure.Data
 {
@@ -42,6 +44,36 @@ namespace Q_Hack_2018.Infrastructure.Data
             }
 
             return returnVal;
+        }
+
+        public Dictionary<int, Category> GetCategories()
+        {
+            Dictionary<int, Category> returnVal = new Dictionary<int, Category>();
+
+            using (var connection = new SqlConnection(dbConn))
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "dbo.GetCategories";
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Connection = connection;
+
+                connection.Open();
+                
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int id = reader.GetInt32(0);
+                        string name = reader.GetString(1);
+
+                        returnVal.Add(id, new Category(id, name));
+                    }
+                }
+            }
+
+            return returnVal;
+
         }
     }
 }
