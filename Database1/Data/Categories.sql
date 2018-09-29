@@ -1,0 +1,6 @@
+﻿IF NOT EXISTS (SELECT 1 FROM [dbo].[Categories] WHERE [Id] = 1)	INSERT INTO [dbo].[Categories] ([Id], [Name]) VALUES (1, N'Entertainment')
+IF NOT EXISTS (SELECT 1 FROM [dbo].[Categories] WHERE [Id] = 2) INSERT INTO [dbo].[Categories] ([Id], [Name]) VALUES (2, N'Transport')
+IF NOT EXISTS (SELECT 1 FROM [dbo].[Categories] WHERE [Id] = 3) INSERT INTO [dbo].[Categories] ([Id], [Name]) VALUES (3, N'Groceries')
+IF NOT EXISTS (SELECT 1 FROM [dbo].[Categories] WHERE [Id] = 4) INSERT INTO [dbo].[Categories] ([Id], [Name]) VALUES (4, N'Bills')
+IF NOT EXISTS (SELECT 1 FROM [dbo].[Categories] WHERE [Id] = 5) INSERT INTO [dbo].[Categories] ([Id], [Name]) VALUES (5, N'General')
+IF NOT EXISTS (SELECT 1 FROM [dbo].[Categories] WHERE [Id] = 6) INSERT INTO [dbo].[Categories] ([Id], [Name]) VALUES (6, N'Shopping')
