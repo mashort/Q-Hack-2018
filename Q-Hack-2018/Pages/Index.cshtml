@@ -3,22 +3,24 @@
 @{
     ViewData["Title"] = "Home page";
 }
-<h2 class="pot__text">Pot total</h2>
-<h2 class="pot__text pot__text__numbers"><span class="pot__text__numbers--poundsign">£</span>@Html.DisplayFor(model => model.PotTotal, "Currency")</h2>
-<img src="../images" alt="Alternate Text" />
-<p class="estimates">
-    <a asp-page="./ContributionConfirm" class="estimates__href">Give me my estimates so far</a></p class="estimates">
+
+<div class="pot__container">
+    <h2 class="pot__text pot__text--total">Pot total</h2>
+    <h2 class="pot__text pot__text__numbers"><span class="pot__text__numbers--poundsign">£</span>@Html.DisplayFor(model => model.PotTotal, "Currency")</h2>
+    <img class="pot__logo" src="../images/fuelgood-logo.png" alt="Alternate Text" />
+</div>
+<p class="estimates"><a class="estimates__href" href="#">Give me my estimates so far</a></p class="estimates">
 
     <hr />
     <table class="table">
         <thead class="nwthead">
             <tr>
-                <th scope="col">
+                <th class="table-headings" scope="col">
                     Transaction categories
                 </th>
-                <th scope="col">
+                <th class="table-headings"  scope="col">
                     Roundup
-                </th>
+                </thclass="table-headings">
             </tr>
         </thead>
         <tbody>
