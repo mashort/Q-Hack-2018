@@ -179,5 +179,30 @@ namespace Q_Hack_2018.Infrastructure.Data
 
             return returnVal;
         }
+
+        public decimal GetAverageDailyCost()
+        {
+            decimal returnVal = 0;
+
+            using (var connection = new SqlConnection(dbConn))
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "dbo.GetSetting";
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.Add("@name", SqlDbType.VarChar);
+                command.Parameters["@name"].Value = "AverageDailyCost";
+
+                command.Connection = connection;
+
+                connection.Open();
+
+                var cost = command.ExecuteScalar();
+                returnVal = (decimal)cost;
+                
+            }
+
+            return returnVal;
+        }
     }
 }
