@@ -1,12 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Q_Hack_2018.Infrastructure.Business_Logic;
 using Q_Hack_2018.Infrastructure.Data;
+using System.ComponentModel.DataAnnotations;
 
 namespace Q_Hack_2018.Pages
 {
@@ -17,11 +12,15 @@ namespace Q_Hack_2018.Pages
 
         public string GivenDays { get; set; }
 
+        public string CategoriesChosen { get; set; }
+
         public void OnGet()
         {
             PotTotal = GetPotTotal();
 
             GivenDays = GetGivenDays();
+
+            CategoriesChosen = GetCategoriesChosen();
         }
 
         public decimal GetPotTotal()
@@ -42,6 +41,15 @@ namespace Q_Hack_2018.Pages
             int daysPaid = FeedbackInfo.DaysPaid(PotTotal);
 
             returnVal = daysPaid.ToString();
+
+            return returnVal;
+        }
+
+        public string GetCategoriesChosen()
+        {
+            string returnVal = string.Empty;
+
+            returnVal = FeedbackInfo.CategoriesGivenAsString();
 
             return returnVal;
         }
