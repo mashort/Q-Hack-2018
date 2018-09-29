@@ -40,9 +40,6 @@ namespace Q_Hack_2018.Infrastructure.Business_Logic
                 }
                 // Store to the DB
 
-
-
-
             }
 
             // Switch the dictionary to a list and return it.

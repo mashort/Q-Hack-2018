@@ -138,5 +138,46 @@ namespace Q_Hack_2018.Infrastructure.Data
 
             return returnVal;
         }
+
+        public void InsertGivingHistory(decimal GivenAmount)
+        {
+            using (var connection = new SqlConnection(dbConn))
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "dbo.InsertGivingHistory";
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.Add("@givenAmount", SqlDbType.VarChar);
+                command.Parameters["@givenAmount"].Value = GivenAmount;
+
+                command.Connection = connection;
+
+                connection.Open();
+
+                var cmd = command.ExecuteScalar();  
+            }
+            
+        }
+
+        public decimal GetLatestGivingHistory()
+        {
+            decimal returnVal;
+
+            using (var connection = new SqlConnection(dbConn))
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "dbo.GetLatestGivingHistory";
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Connection = connection;
+
+                connection.Open();
+
+                var amount = command.ExecuteScalar();
+                returnVal = (decimal)amount;
+            }
+
+            return returnVal;
+        }
     }
 }
