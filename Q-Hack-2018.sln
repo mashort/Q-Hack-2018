@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Q-Hack-2018.Core", "Q-Hack-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Q-Hack-2018.Infrastructure", "Q-Hack-2018.Infrastructure\Q-Hack-2018.Infrastructure.csproj", "{AB178B4B-B6E9-4F49-9796-71E305116015}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Q-Hack-2018-DB", "Database1\Q-Hack-2018-DB.sqlproj", "{A577A428-4B25-4546-83BE-45C8738148A3}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Q-Hack-2018-DB", "Q-Hack-2018-DB\Q-Hack-2018-DB.sqlproj", "{A577A428-4B25-4546-83BE-45C8738148A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
