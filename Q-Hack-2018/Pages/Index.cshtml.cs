@@ -30,7 +30,7 @@ namespace Q_Hack_2018.Pages
         {
             decimal returnVal;
 
-            decimal potTotal = new DAL().GetLatestGivingHistory();
+            decimal potTotal = new DAL().GetPotTotal();
 
             returnVal = potTotal;
 
