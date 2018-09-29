@@ -95,5 +95,6 @@
     <None Include="Data\CategorisationMatches.sql" />
     <None Include="Q-Hack-2018-DB.publish.xml" />
     <None Include="Data\CalculationRules.sql" />
+    <None Include="Data\Settings.sql" />
   </ItemGroup>
 </Project>
