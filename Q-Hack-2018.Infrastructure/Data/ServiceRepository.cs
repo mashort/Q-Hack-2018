@@ -28,7 +28,9 @@ namespace Q_Hack_2018.Infrastructure.Data
                     using (HttpContent content = response.Content)
                     {
                         string transactionData = await content.ReadAsStringAsync();
-                        transactionData = transactionData.Replace(@",""meta"":{""total"":108,""count"":108}", "");
+
+                        transactionData = CleanTransactionData(transactionData);
+
                         listOfTransactions = JsonConvert.DeserializeObject<List<Transaction>>(transactionData);
                     }
                 }
@@ -39,9 +41,21 @@ namespace Q_Hack_2018.Infrastructure.Data
 
         public string GetBearerToken()
         {
+            // TODO Get Bearer Token from database
             string bearerToken = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhTmsifQ.eyJleHAiOjE1MzgyMjM5NjcsIm5iZiI6MTUzODIyMDM2NywidmVyIjoiMS4wIiwiaXNzIjoiaHR0cHM6Ly9sb2dpbi5taWNyb3NvZnRvbmxpbmUuY29tL2Q1Zjg1NjgyLWY2N2EtNDQ0NC05MzY5LTJjNWVjMWEwZThjZC92Mi4wLyIsInN1YiI6IjQ4MjI3ODRkLTBjMzUtNDg2Yi1hZjYwLWViZGE3NjE4ZDA2MiIsImF1ZCI6ImEwNmE3NGM1LWRlYTgtNGY4Ny1iYTc3LTlkZjZkMDMwODcyNSIsImlhdCI6MTUzODIyMDM2NywiYXV0aF90aW1lIjoxNTM4MjIwMzY3LCJvaWQiOiI0ODIyNzg0ZC0wYzM1LTQ4NmItYWY2MC1lYmRhNzYxOGQwNjIiLCJnaXZlbl9uYW1lIjoibXNiYiIsImZhbWlseV9uYW1lIjoieGFtdGVzdCIsIm5hbWUiOiJtc2JieGFtdGVzdCIsImVtYWlscyI6WyJtYXJ0aW4uc2hvcnRAYmx1ZWJhbmsuaW8iXSwidGZwIjoiQjJDXzFfU0kifQ.hzWnDxzzvYM20dlCseCRa2a2oDuOLNZX-Xrqnc29a_rZOc1Em2vvYySPqS2dcpAQFCPfTl4_iC8wwyADVEUKM_fykWSzAFjzDtI1J8gTqDkLeY27gvUR3_NZnVYP1HGHsv1MLKOIdB9xrmdgi0JmgdtN1wnyfR7QRDHISemwrIYN3aTKqiN7a1ABCS3dF6TMe2RrVH5ks0djbGjokNFZv49r0XzilW963mmxR2LmyvRj8fysgUbkeyNOTvkGpXGn1-FK4q1I7-vDXW8ID1fVrSAcCPtjJanMExr9tix8SnEF340cpFUIF1DoaD2H-oMWTx-TAH5ibdPXWS0SacmAZQ";
 
             return bearerToken;
+        }
+
+        private string CleanTransactionData(string transactionData)
+        {
+            string returnVal = string.Empty;
+
+            returnVal = transactionData.Replace(@",""meta"":{""total"":108,""count"":108}", "");
+            returnVal = returnVal.Replace(@"{""results"":", "");
+            returnVal = returnVal.TrimEnd('}');
+
+            return returnVal;
         }
     }
 }
