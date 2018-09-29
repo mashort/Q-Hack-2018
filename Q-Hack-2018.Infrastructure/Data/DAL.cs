@@ -238,6 +238,25 @@ namespace Q_Hack_2018.Infrastructure.Data
             }
         }
 
+        public void InsertCalculationHistoryByCategoryName(DateTime CalculationDate, string CategoryName)
+        {
+            using (var connection = new SqlConnection(dbConn))
+            {
+                connection.Open();
+                
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "dbo.InsertCalculationHistoryByName";
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.Add("@calculationDate", SqlDbType.DateTime);
+                command.Parameters["@calculationDate"].Value = CalculationDate;
+                command.Parameters.Add("@categoryName", SqlDbType.NVarChar);
+                command.Parameters["@categoryName"].Value = CategoryName;
+                command.Connection = connection;
+                command.ExecuteScalar();
+            }
+        }
+
         public List<string> GetLatestCalculationHistory()
         {
             List<string> categoryNames = new List<string>();
