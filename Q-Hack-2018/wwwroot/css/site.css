@@ -203,3 +203,41 @@ padding-bottom: 24px;
 .inverted {
 color: #444444;
 }
+
+.close-icon {
+	float: right;
+	margin-right: 24px;
+}
+
+.title-nav {
+	float: left;
+	height: 50px;
+	padding: 15px 15px;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 20px;
+	color: #ffffff;
+	text-decoration: none;
+}
+.title-nav:hover {
+
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.nav__logo {
+	margin-top: 2px;
+	height: 40px;
+	max-width: 100%;
+	display: inline-block;
+	vertical-align: middle;
+	float: left;
+}
+
+.nav-tag {
+display: block;
+color: #ffffff;
+margin: 15px 0 0 0;
+text-align: right;
+font-weight: 600;
+}
