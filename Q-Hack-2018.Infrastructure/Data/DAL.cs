@@ -73,7 +73,70 @@ namespace Q_Hack_2018.Infrastructure.Data
             }
 
             return returnVal;
+        }
 
+        public Dictionary<string, int> GetCategorisationMatches()
+        {
+            Dictionary<string, int> returnVal = new Dictionary<string, int>();
+
+            using (var connection = new SqlConnection(dbConn))
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "dbo.GetCategorisationMatches";
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Connection = connection;
+
+                connection.Open();
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int id = reader.GetInt32(0);
+                        string textMatch = reader.GetString(1);
+                        int categoryID = reader.GetInt32(2);
+
+                        returnVal.Add(textMatch, categoryID);
+                    }
+                }
+            }
+
+            return returnVal;
+
+        }
+
+        public Dictionary<string, TransactionType> GetTransactionTypes()
+        {
+            Dictionary<string, TransactionType> returnVal = new Dictionary<string, TransactionType>();
+
+            using (var connection = new SqlConnection(dbConn))
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "dbo.GetTransactionTypes";
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Connection = connection;
+
+                connection.Open();
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int id = reader.GetInt32(0);
+                        string name = reader.GetString(1);
+                        bool? process = reader.IsDBNull(2) ? (bool?) null : reader.GetBoolean(2);
+                        int? hardCategoryID = reader.IsDBNull(3) ? (int?) null : reader.GetInt32(3);
+
+                        TransactionType tt = new TransactionType(id, name, process, hardCategoryID);
+
+                        returnVal.Add(name, tt);
+                    }
+                }
+            }
+
+            return returnVal;
         }
     }
 }

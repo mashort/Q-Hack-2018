@@ -6,11 +6,43 @@ namespace Q_Hack_2018.Core.Entities
 {
     public class TransactionType
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        private int _id;
+        private string _name;
+        private Nullable<bool> _process;
+        private Nullable<int> _hardCategoryID;
 
-        public bool Process { get; set; }
+        public int Id
+        {
+            get
+            {
+                return _id;
+            }
+        }
+        public string Name { get
+            {
+                return _name;
+            }
+        }
 
-        public Nullable<int> HardCategoryID { get; set; }
+        public Nullable<bool> Process { get
+            {
+                return _process;
+            }
+        }
+
+        public Nullable<int> HardCategoryID {
+            get
+            {
+                return _hardCategoryID;
+            }
+        }
+
+        public TransactionType(int Id, string Name, bool? Process, Nullable<int> HardCategoryID)
+        {
+            _id = Id;
+            _name = Name;
+            _process = Process;
+            _hardCategoryID = HardCategoryID;
+        }
     }
 }

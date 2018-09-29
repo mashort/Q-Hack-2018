@@ -25,7 +25,7 @@ namespace Q_Hack_2018.Infrastructure.Business_Logic
                 decimal roundedValue = Math.Ceiling(System.Math.Abs(transactionValue));
 
                 // Return the difference from the overall transation rounded amount.
-                return (roundedValue - transactionValue);
+                return (roundedValue - System.Math.Abs(transactionValue));
             }
             
         }
