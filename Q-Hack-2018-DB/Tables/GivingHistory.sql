@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[GivingHistory]
 (
-	[Id] INT NOT NULL PRIMARY KEY, 
-    [GivenDate] DATETIME NOT NULL, 
-    [GivenAmount] MONEY NOT NULL
+    [GivenDateTime] DATETIME NOT NULL, 
+    [GivenAmount] MONEY NOT NULL, 
+    CONSTRAINT [PK_GivingHistory] PRIMARY KEY ([GivenDateTime])
 )

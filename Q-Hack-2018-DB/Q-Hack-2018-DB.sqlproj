@@ -60,6 +60,7 @@
     <Folder Include="Tables" />
     <Folder Include="Data" />
     <Folder Include="Foreign Keys" />
+    <Folder Include="Procedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Categories.sql" />
@@ -76,6 +77,14 @@
     <Build Include="Tables\CalculationHistory.sql" />
     <Build Include="Foreign Keys\FKCalculationHistoryCalculationRule.sql" />
     <Build Include="Foreign Keys\FKCalculationHistoryCategory.sql" />
+    <Build Include="Procedures\GetCategories.sql" />
+    <Build Include="Procedures\GetSetting.sql" />
+    <Build Include="Procedures\InsertTransaction.sql" />
+    <Build Include="Procedures\UpdateTransaction.sql" />
+    <Build Include="Procedures\GetTransactionTypes.sql" />
+    <Build Include="Procedures\GetCategorisationMatches.sql" />
+    <Build Include="Procedures\PurgeTransactions.sql" />
+    <Build Include="Procedures\InsertGivingHistory.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Q-Hack-2018-DB.refactorlog" />
