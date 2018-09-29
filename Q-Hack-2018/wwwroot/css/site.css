@@ -188,4 +188,10 @@ th, tr {
 	line-height: 1.25;
 }
 .block{
-	display: block;}
+	display: block;
+}
+
+.container__white {
+background-color: #fafafa;
+opacity: 0.9;
+}
