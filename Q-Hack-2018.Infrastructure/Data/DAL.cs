@@ -161,7 +161,7 @@ namespace Q_Hack_2018.Infrastructure.Data
 
         public decimal GetLatestGivingHistory()
         {
-            decimal returnVal;
+            decimal returnVal = (decimal)0.0;
 
             using (var connection = new SqlConnection(dbConn))
             {
@@ -174,7 +174,11 @@ namespace Q_Hack_2018.Infrastructure.Data
                 connection.Open();
 
                 var amount = command.ExecuteScalar();
-                returnVal = (decimal)amount;
+
+                if (amount != null)
+                {
+                    returnVal = (decimal)amount;
+                }                
             }
 
             return returnVal;
