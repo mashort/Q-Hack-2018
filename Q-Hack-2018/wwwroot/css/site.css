@@ -160,3 +160,32 @@ th, tr {
 .copyright {
 	color: #fafafa;
 }
+
+
+.category-text {
+	text-align: center;
+	font-size: 18px; 
+	color: #ffffff;
+	padding: 0 100px;
+}
+
+.category-text--category {
+	font-weight: 600;
+	color: #8FD3F5;
+}
+
+.given-text {
+	margin-top: 48px;
+	text-align: center;
+	font-size: 24px;
+	color: #ffffff;
+}
+
+.given-text--number {
+	display: block;
+	font-size: 70px;
+	font-weight: 600;
+	line-height: 1.25;
+}
+.block{
+	display: block;}
