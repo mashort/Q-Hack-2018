@@ -9,8 +9,10 @@ Post-Deployment Script Template
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
+:r .\CalculationHistory.sql
 :r .\CalculationRules.sql
 :r .\Categories.sql
 :r .\CategorisationMatches.sql
+:r .\GivingHistory.sql
 :r .\Settings.sql
 :r .\TransactionTypes.sql

@@ -98,5 +98,7 @@
     <None Include="Q-Hack-2018-DB.publish.xml" />
     <None Include="Data\CalculationRules.sql" />
     <None Include="Data\Settings.sql" />
+    <None Include="Data\CalculationHistory.sql" />
+    <None Include="Data\GivingHistory.sql" />
   </ItemGroup>
 </Project>
