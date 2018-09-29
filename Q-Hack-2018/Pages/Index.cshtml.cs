@@ -15,7 +15,8 @@ namespace Q_Hack_2018.Pages
 
         public async Task OnGetAsync()
         {
-            string bearer = new DAL().GetBearerToken();
+            // Transactions = await new ServiceRepository().GetTransactions();
+            //await new TxnProcessor().ProcessTransactions()
         }
     }
 }

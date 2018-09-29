@@ -12,4 +12,5 @@ Post-Deployment Script Template
 :r .\CalculationRules.sql
 :r .\Categories.sql
 :r .\CategorisationMatches.sql
+:r .\Settings.sql
 :r .\TransactionTypes.sql
