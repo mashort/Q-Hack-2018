@@ -1,37 +1,116 @@
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification 
 for details on configuring this project to bundle and minify static web assets. */
 body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+	padding-top: 50px;
+	padding-bottom: 20px;
 }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 /* Carousel */
 .carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+	font-size: 20px;
+	line-height: 1.4;
 }
 
 /* Make .svg files in the carousel display properly in older browsers */
 .carousel-inner .item img[src$=".svg"] {
-    width: 100%;
+	width: 100%;
 }
 
 /* QR code generator */
 #qrCode {
-    margin: 15px;
+	margin: 15px;
 }
 
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
-    }
+	/* Hide captions */
+	.carousel-caption {
+		display: none;
+	}
+}
+
+
+/*Bootstrap overrides*/
+
+html {
+	background: #111B1B;
+}
+
+body {
+	background: no-repeat linear-gradient(180deg, #506363 0%, #111B1B 100%), #3A3A3A;
+}
+
+
+.pot__text {
+	font-size: 34px;
+	text-align: center;
+	color: #ffffff;
+}
+
+.pot__text__numbers {
+	font-size: 120px;
+	font-weight: 600;
+}
+
+.pot__text__numbers--poundsign {
+	font-size: 60px;
+}
+
+.estimates {
+	text-align: center;
+	font-size: 12px;
+}
+
+a.estimates__href {
+	color: #8FD3F5;
+}
+
+table, thread, hr, td, th {
+	border: none;
+	border-color: none;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+	border: none;
+}
+
+th, tr {
+	color: #ffffff;
+}
+
+	tr:hover {
+		/*background-color: rgba(255, 0, 0, 0.1);*/
+	}
+
+.btn-section {
+	background-color: #F16A92;
+	width: 350px;
+	text-align: left;
+}
+
+.btn-on {
+	border-radius: 3px 0 0 3px;
+}
+
+.btn-off {
+	border-radius: 0 3px 3px 0;
+}
+
+.btn__roundup {
+	display: none;
+}
+
+.roundup {
+	display: inline-block;
+}
+
+.copyright {
+	color: #fafafa;
 }
