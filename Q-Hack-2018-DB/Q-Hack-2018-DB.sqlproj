@@ -75,7 +75,6 @@
     <Build Include="Foreign Keys\FKTransactionsTransactionTypeID.sql" />
     <Build Include="Tables\CalculationRules.sql" />
     <Build Include="Tables\CalculationHistory.sql" />
-    <Build Include="Foreign Keys\FKCalculationHistoryCalculationRule.sql" />
     <Build Include="Foreign Keys\FKCalculationHistoryCategory.sql" />
     <Build Include="Procedures\GetCategories.sql" />
     <Build Include="Procedures\GetSetting.sql" />
@@ -86,6 +85,8 @@
     <Build Include="Procedures\PurgeTransactions.sql" />
     <Build Include="Procedures\InsertGivingHistory.sql" />
     <Build Include="Procedures\GetLatestGivingHistory.sql" />
+    <Build Include="Procedures\InsertCalculationHistory.sql" />
+    <Build Include="Procedures\GetLatestCalculationHistory.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Q-Hack-2018-DB.refactorlog" />

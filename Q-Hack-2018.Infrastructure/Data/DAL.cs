@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using Q_Hack_2018.Core.Entities;
 
@@ -207,6 +208,62 @@ namespace Q_Hack_2018.Infrastructure.Data
             }
 
             return returnVal;
+        }
+
+        public void InsertCalculationHistory(List<Category> givenCategories)
+        {
+            // Get the one date/time for all the categoryIDs
+            DateTime calcDate = DateTime.Now;
+
+            using (var connection = new SqlConnection(dbConn))
+            {
+                connection.Open();
+
+                foreach (Category c in givenCategories)
+                {
+                    if (c.Value > 0)
+                    {
+                        SqlCommand command = new SqlCommand();
+                        command.CommandText = "dbo.InsertCalculationHistory";
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        command.Parameters.Add("@calculationDate", SqlDbType.DateTime);
+                        command.Parameters["@calculationDate"].Value = calcDate;
+                        command.Parameters.Add("@categoryID", SqlDbType.Int);
+                        command.Parameters["@categoryID"].Value = c.Id;
+                        command.Connection = connection;
+                        command.ExecuteScalar();
+                    }
+                }
+            }
+        }
+
+        public List<string> GetLatestCalculationHistory()
+        {
+            List<string> categoryNames = new List<string>();
+
+            using (var connection = new SqlConnection(dbConn))
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "dbo.GetLatestCalculationHistory";
+                command.CommandType = CommandType.StoredProcedure;
+                
+                command.Connection = connection;
+
+                connection.Open();
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string name = reader.GetString(0);
+
+                        categoryNames.Add(name);
+                    }
+                }
+            }
+
+            return categoryNames;
         }
     }
 }
