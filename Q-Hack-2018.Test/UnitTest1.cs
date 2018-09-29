@@ -30,6 +30,17 @@ namespace Q_Hack_2018.Test
         [TestMethod]
         public void TestCategoriesGivenAsString()
         {
+            Category c1 = new Category(1, "Entertainment");
+            c1.AddAmount((decimal)3.45);
+            Category c2 = new Category(2, "Transport");
+            c2.AddAmount((decimal)18.21);
+            Category c3 = new Category(2, "Groceries");
+            List<Category> catList = new List<Category>();
+            catList.Add(c1);
+            catList.Add(c2);
+            catList.Add(c3);
+
+            string a = FeedbackInfo.CategoriesGivenAsString();
 
         }
     }

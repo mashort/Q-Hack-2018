@@ -24,11 +24,11 @@ namespace Q_Hack_2018.Infrastructure.Business_Logic
 
             if (calcHistory.Count == 0)
             {
-                return "None";
+                return "no categories";
             }
             else if (calcHistory.Count == 1)
             {
-                return calcHistory[0];
+                return calcHistory[0] + " category";
             }
             else
             {
@@ -44,6 +44,7 @@ namespace Q_Hack_2018.Infrastructure.Business_Logic
 
                 sb.Append(" and ");
                 sb.Append(calcHistory[(calcHistory.Count - 1)]);
+                sb.Append(" categories");
 
                 return sb.ToString();
             }
