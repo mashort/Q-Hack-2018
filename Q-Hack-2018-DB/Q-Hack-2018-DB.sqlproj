@@ -85,6 +85,7 @@
     <Build Include="Procedures\GetCategorisationMatches.sql" />
     <Build Include="Procedures\PurgeTransactions.sql" />
     <Build Include="Procedures\InsertGivingHistory.sql" />
+    <Build Include="Procedures\GetLatestGivingHistory.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Q-Hack-2018-DB.refactorlog" />

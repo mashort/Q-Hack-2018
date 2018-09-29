@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Q_Hack_2018.Core.Entities;
+using Q_Hack_2018.Infrastructure.Data;
 
 namespace Q_Hack_2018.Infrastructure.Business_Logic
 {
@@ -11,10 +12,8 @@ namespace Q_Hack_2018.Infrastructure.Business_Logic
 
         static TransactionTypeClassifier()
         {
-            _txnTypes = new Dictionary<string, TransactionType>();
-
             // Load the dictionary from the DB.
-
+            _txnTypes = new DAL().GetTransactionTypes();
         }
 
         public static TransactionType GetTransactionType(string txnTypeString)

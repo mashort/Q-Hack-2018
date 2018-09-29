@@ -12,12 +12,12 @@ namespace Q_Hack_2018.Infrastructure.Business_Logic
     /// </summary>
     public class TxnProcessor
     {
-        public async Task ProcessTransactions()
+        public async Task<List<Category>> ProcessTransactions()
         {
             Dictionary<int, Category> categoryDict = new Dictionary<int, Category>();
-            
-            // TODO: Load the categories.
 
+            // Load the categories.
+            categoryDict = new DAL().GetCategories();
             
             // Request the list of transactions from the Bank of APIs
             List<Transaction> bankTransactions = await new ServiceRepository().GetTransactions();
@@ -30,19 +30,20 @@ namespace Q_Hack_2018.Infrastructure.Business_Logic
                 // Categorise this transaction
                 Category c = TransactionClassifier.GetCategory(txntype, t.TransactionDescription);
 
-                // Work out what that means money wise
-                decimal givingAmount = Calculator.CalculateAmount(t.TransactionAmount);
+                if (c != null)
+                {
+                    // Work out what that means money wise
+                    decimal givingAmount = Calculator.CalculateAmount(t.TransactionAmount);
 
-                // Work out running totals
-                categoryDict[c.Id].AddAmount(givingAmount);
-
+                    // Work out running totals
+                    categoryDict[c.Id].AddAmount(givingAmount);
+                }
                 // Store to the DB
-
-
-
 
             }
 
+            // Switch the dictionary to a list and return it.
+            return new List<Category>(categoryDict.Values);
         }
 
     }

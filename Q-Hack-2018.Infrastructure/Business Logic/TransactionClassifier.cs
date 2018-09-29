@@ -14,18 +14,19 @@ namespace Q_Hack_2018.Infrastructure.Business_Logic
         static TransactionClassifier()
         {
             _categorisationMatches = new Dictionary<string, int>();
-            _categories = new Dictionary<int, Category>();
-
-            // Load the CategorisationMatches from the DB.
+            
+            // Load the Categories from the DB.
             _categories = new DAL().GetCategories();
 
+            // Load the CategorisationMatches from the DB.
+            _categorisationMatches = new DAL().GetCategorisationMatches();
         }
 
 
         public static Category GetCategory(TransactionType transactionType, string transactionDescription)
         {
             // Only process transaction types that we're going to consider.
-            if (transactionType.Process)
+            if (transactionType.Process.HasValue && transactionType.Process.Value)
             {
                 if (transactionType.HardCategoryID.HasValue )
                 {
