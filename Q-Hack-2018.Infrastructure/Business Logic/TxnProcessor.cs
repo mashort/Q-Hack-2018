@@ -12,7 +12,7 @@ namespace Q_Hack_2018.Infrastructure.Business_Logic
     /// </summary>
     public class TxnProcessor
     {
-        public async Task ProcessTransactions()
+        public async Task<List<Category>> ProcessTransactions()
         {
             Dictionary<int, Category> categoryDict = new Dictionary<int, Category>();
 
@@ -45,7 +45,8 @@ namespace Q_Hack_2018.Infrastructure.Business_Logic
 
             }
 
-            string a = categoryDict.ToString();
+            // Switch the dictionary to a list and return it.
+            return new List<Category>(categoryDict.Values);
         }
 
     }
