@@ -165,7 +165,7 @@ th, tr {
 .category-text {
 	text-align: center;
 	font-size: 18px; 
-	color: #ffffff;
+	color: #444444;
 	padding: 0 100px;
 }
 
@@ -178,7 +178,7 @@ th, tr {
 	margin-top: 48px;
 	text-align: center;
 	font-size: 24px;
-	color: #ffffff;
+	color: #444444;
 }
 
 .given-text--number {
@@ -192,6 +192,14 @@ th, tr {
 }
 
 .container__white {
+	margin-top: 48px;
 background-color: #fafafa;
 opacity: 0.9;
+border-radius: 4px;
+padding-top: 24px;
+padding-bottom: 24px;
+}
+
+.inverted {
+color: #444444;
 }
