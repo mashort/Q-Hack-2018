@@ -265,5 +265,29 @@ namespace Q_Hack_2018.Infrastructure.Data
 
             return categoryNames;
         }
+        public decimal GetPotTotal()
+        {
+            decimal returnVal = (decimal)0.0;
+
+            using (var connection = new SqlConnection(dbConn))
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "dbo.GetPotTotal";
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Connection = connection;
+
+                connection.Open();
+
+                var amount = command.ExecuteScalar();
+
+                if (amount != null)
+                {
+                    returnVal = (decimal)amount;
+                }
+            }
+
+            return returnVal;
+        }
     }
 }
