@@ -6,4 +6,31 @@
 
 <h2>Home Screen</h2>
 
-<p>Content here...</p>
+<hr />
+
+<table class="table table-hover">
+    <thead class="nwthead">
+        <tr>
+            <th scope="col">
+                &nbsp;
+            </th>
+            <th scope="col">
+                &nbsp;
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var category in Model.Categories)
+        {
+            <tr>
+                <th scope="row" style="vertical-align: middle;">
+                    @Html.DisplayFor(modelItem => category.Name)
+                </th>
+                <td style="vertical-align: middle;">
+                    @Html.DisplayFor(modelItem => category.Value)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
