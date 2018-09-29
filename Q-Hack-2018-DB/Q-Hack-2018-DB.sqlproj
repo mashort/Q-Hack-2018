@@ -89,6 +89,7 @@
     <Build Include="Procedures\GetLatestCalculationHistory.sql" />
     <Build Include="Procedures\GetPotTotal.sql" />
     <Build Include="Procedures\InsertCalculationHistoryByName.sql" />
+    <Build Include="Procedures\DeleteCalculationHistoryByName.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="Q-Hack-2018-DB.refactorlog" />
