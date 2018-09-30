@@ -48,7 +48,6 @@ body {
 }
 
 .pot__container {
-	margin-top: 48px;
 margin-right: auto;
 margin-left: auto;
 	text-align: center;
@@ -63,7 +62,7 @@ margin-left: auto;
 }
 
 .pot__text {
-	font-size: 34px;
+	font-size: 2em;
 	text-align: center;
 	color: #ffffff;
 }
@@ -76,7 +75,7 @@ margin-left: auto;
 	margin-top: 2px;
 	margin-left: 90px;
 	display: inline-block;
-	font-size: 120px;
+	font-size: 11em;
 	font-weight: 600;
 }
 
@@ -95,7 +94,7 @@ margin-left: auto;
 
 .estimates {
 	text-align: center;
-	font-size: 28px;
+	font-size: 2.5em;
 }
 
 a.estimates__href {
@@ -188,7 +187,7 @@ background-color: #C4C4C4;
 
 .category-text {
 	text-align: center;
-	font-size: 18px; 
+	font-size: 1.5em; 
 	color: #444444;
 	padding: 0 100px;
 }
@@ -202,20 +201,20 @@ background-color: #C4C4C4;
 	margin-top: 40px;
 	margin-bottom: 40px;
 	text-align: center;
-	font-size: 24px;
+	font-size: 2em;
 	color: #444444;
 }
 
 .given-text--number {
 	display: block;
-	font-size: 70px;
+	font-size: 3.5em;
 	font-weight: 600;
 	line-height: 1.25;
 }
 
 .forecast-text {
 	text-align: center;
-	font-size: 18px;
+	font-size: 1.5em;
 	color: #444444;
 	padding: 0 100px;
 }
@@ -251,7 +250,7 @@ color: #444444;
 	float: left;
 	height: 50px;
 	padding: 15px 15px;
-	font-size: 24px;
+	font-size: 2em;
 	font-weight: 600;
 	line-height: 20px;
 	color: #ffffff;
