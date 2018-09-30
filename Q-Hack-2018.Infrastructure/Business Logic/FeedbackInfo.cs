@@ -28,7 +28,7 @@ namespace Q_Hack_2018.Infrastructure.Business_Logic
             }
             else if (calcHistory.Count == 1)
             {
-                return "<span class='category-text--category'>" +  calcHistory[0] + "</span> category";
+                return calcHistory[0];
             }
             else
             {
@@ -36,18 +36,14 @@ namespace Q_Hack_2018.Infrastructure.Business_Logic
 
                 for (int i = 0; i < (calcHistory.Count - 1); i++)
                 {
-                    sb.Append("<span class='category-text--category'>");
                     sb.Append(calcHistory[i]);
-                    sb.Append("</span>");
                     sb.Append(", ");
                 }
 
                 sb.Remove((sb.Length - 2), 2);
 
                 sb.Append(" and ");
-                sb.Append("<span class='category-text--category'>");
                 sb.Append(calcHistory[(calcHistory.Count - 1)]);
-                sb.Append("</span>");
                 sb.Append(" categories");
 
                 return sb.ToString();
