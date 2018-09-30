@@ -53,6 +53,15 @@ margin-right: auto;
 margin-left: auto;
 	text-align: center;
 }
+
+.pot__container--forecast {
+	margin-top: 14px;
+	padding-bottom: 14px;
+margin-right: auto;
+margin-left: auto;
+	text-align: center;
+}
+
 .pot__text {
 	font-size: 34px;
 	text-align: center;
@@ -147,6 +156,21 @@ th, tr {
 		color: #444444;
 	}
 
+	.btn-roundup{
+	color: #444444;
+	font-weight: 600;
+	background-color: #fafafa;
+	}
+	.btn-roundup:hover{
+background-color: #C4C4C4;
+	}
+
+.btn.btn-roundup.active{
+	background-color: #F16A92;
+	color: #ffffff;
+}
+
+
 .btn__roundup {
 	display: none;
 }
@@ -175,7 +199,8 @@ th, tr {
 }
 
 .given-text {
-	margin-top: 48px;
+	margin-top: 40px;
+	margin-bottom: 40px;
 	text-align: center;
 	font-size: 24px;
 	color: #444444;
@@ -187,6 +212,14 @@ th, tr {
 	font-weight: 600;
 	line-height: 1.25;
 }
+
+.forecast-text {
+	text-align: center;
+	font-size: 18px;
+	color: #444444;
+	padding: 0 100px;
+}
+
 .block{
 	display: block;
 }
@@ -207,6 +240,11 @@ color: #444444;
 .close-icon {
 	float: right;
 	margin-right: 24px;
+}
+
+.chevron-icon {
+	float: left;
+	margin-left: 24px;
 }
 
 .title-nav {
@@ -240,4 +278,12 @@ color: #ffffff;
 margin: 15px 0 0 0;
 text-align: right;
 font-weight: 600;
+}
+
+.fig-images{
+	height: 240px;
+	margin-top: 28px;
+	padding: 0 14px;
+	max-width: 100%;
+	display: inline-block;
 }

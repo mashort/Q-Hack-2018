@@ -20,7 +20,7 @@
                 </th>
                 <th class="table-headings"  scope="col">
                     Roundup
-                </thclass="table-headings">
+                </th class="table-headings">
             </tr>
         </thead>
         <tbody>
@@ -31,9 +31,21 @@
                         <button type="button" class="btn btn-section">@Html.DisplayFor(modelItem => category.Name) <span class="btn__roundup">@Html.DisplayFor(modelItem => category.Value)</span> </button>
 <p class="roundup">@Html.DisplayFor(modelItem => category.Value) rounded up so far this month</p>
     </th>
-<td> <button type="button" class="btn btn-on">On</button><button type="button" class="btn btn-off">Off</button></td>
+    <td>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-roundup active">
+    <input type="radio" name="options" id="option1" autocomplete="off" checked> On
+  </label>
+  <label class="btn btn-roundup">
+    <input type="radio" name="options" id="option2" autocomplete="off"> Off
+  </label>
+</div>
+</td>
+    <!-- <td><input type="checkbox" checked value="@Html.DisplayFor(modelItem => category.Value)" data-toggle="toggle"></td> -->
+<!-- <td> <button onclick="testFunction(event)" value="@Html.DisplayFor(modelItem => category.Value)" type="button" class="btn btn-on">On</button><button type="button" class="btn btn-off">Off</button></td> -->
+    
+    
     </tr>
 }
             </tbody>
             </table>
-
